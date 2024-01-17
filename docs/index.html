@@ -4,36 +4,216 @@
     <title>Maastyx</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/assets/pictures/maastyx.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="icon" href="maastyx.ico" type="image/x-icon">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.5s, color 0.5s;
+        }
+        
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
+        
+        header h1 {
+            margin: 0;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ccc;
+            padding: 1em;
+            text-align: center;
+        }
+        
+        .nav-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav ul li {
+            display: inline;
+            margin-right: 1em;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+        
+        main {
+            padding: 2em;
+        }
+        
+        section {
+            margin-bottom: 2em;
+        }
+        
+        section h2 {
+            margin-top: 0;
+        }
+        
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+        
+        body.dark-mode header,
+        body.dark-mode nav {
+            background-color: #555;
+        }
+        
+        body.dark-mode nav ul li a {
+            color: #fff;
+        }
+        
+        /* Moon and Sun Icons */
+        .icon-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .icon {
+            font-size: 18px;
+            margin-right: 5px;
+        }
+        
+        #moon-icon {
+            display: none;
+        }
+        
+        body.dark-mode #moon-icon {
+            display: inline;
+        }
+        
+        body.dark-mode #sun-icon {
+            display: none;
+        }
+        
+        /* Hide Checkbox */
+        #dark-mode-toggle input {
+            display: none;
+        }
+        
+    </style>
 </head>
 <body>
     <header>
         <h1>Maastyx</h1>
     </header>
-    <nav>
-        <div class="nav-container">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="pc.html">PC</a></li>
-                <li><a href="social.html">Social</a></li>
-                <li><a href="impressum.html">Impressum</a></li>
-            </ul>
-        </div>
-        <div id="dark-mode-toggle" class="icon-container">
-            <input type="checkbox" id="dark-mode-switch">
-            <label for="dark-mode-switch">
-                <span class="icon" id="moon-icon">&#127770;</span>
-                <span class="icon" id="sun-icon">&#127769;</span>
-            </label>
-        </div>
-    </nav>
-    <main>
-        <section>
-            <h2>Hallo auf meiner Webseite</h2>
-            <p>Hier könnte Ihr Text stehen</p>
-        </section>    
-    </main>
-    <script src="/assets/script/script.js"></script>
+
+    <!-- Home Page -->
+    <section id="home" class="page">
+        <nav>
+            <div class="nav-container">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#pc">PC</a></li>
+                    <li><a href="#social">Social</a></li>
+                    <li><a href="#impressum">Impressum</a></li>
+                </ul>
+            </div>
+            <div id="dark-mode-toggle" class="icon-container">
+                <input type="checkbox" id="dark-mode-switch">
+                <label for="dark-mode-switch">
+                    <span class="icon" id="moon-icon">&#127770;</span>
+                    <span class="icon" id="sun-icon">&#127769;</span>
+                </label>
+            </div>
+        </nav>
+        <main>
+            <section>
+                <h2>Hallo auf meiner Webseite</h2>
+                <p>Hier könnte Ihr Text stehen</p>
+            </section>
+        </main>
+    </section>
+
+    <!-- PC Page -->
+    <section id="pc" class="page">
+        <nav>
+            <!-- Navigation für die PC-Seite, falls benötigt -->
+        </nav>
+        <main>
+            <section>
+                <h2>PC Seite</h2>
+                <p>Inhalt der PC Seite</p>
+            </section>
+        </main>
+    </section>
+
+    <!-- Social Page -->
+    <section id="social" class="page">
+        <nav>
+            <!-- Navigation für die Social-Seite, falls benötigt -->
+        </nav>
+        <main>
+            <section>
+                <h2>Social Seite</h2>
+                <p>Inhalt der Social Seite</p>
+            </section>
+        </main>
+    </section>
+
+    <!-- Impressum Page -->
+    <section id="impressum" class="page">
+        <nav>
+            <!-- Navigation für die Impressum-Seite, falls benötigt -->
+        </nav>
+        <main>
+            <section>
+                <h2>Impressum</h2>
+                <p>Inhalt des Impressum</p>
+            </section>
+        </main>
+    </section>
+    <script>
+        // JavaScript-Code hier, falls erforderlich
+        const darkModeToggle = document.getElementById('dark-mode-switch');
+        const moonIcon = document.getElementById('moon-icon');
+        const sunIcon = document.getElementById('sun-icon');
+        const body = document.body;
+
+        // Check for user's preference in local storage
+        if (localStorage.getItem('dark-mode') === 'enabled') {
+            enableDarkMode();
+        }
+
+        darkModeToggle.addEventListener('change', () => {
+            if (darkModeToggle.checked) {
+                enableDarkMode();
+            } else {
+                disableDarkMode();
+            }
+        });
+
+        function enableDarkMode() {
+            body.classList.add('dark-mode');
+            moonIcon.style.display = 'inline';
+            sunIcon.style.display = 'none';
+            localStorage.setItem('dark-mode', 'enabled');
+        }
+
+        function disableDarkMode() {
+            body.classList.remove('dark-mode');
+            moonIcon.style.display = 'none';
+            sunIcon.style.display = 'inline';
+            localStorage.setItem('dark-mode', null);
+        }
+    </script>
 </body>
 </html>
