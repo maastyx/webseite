@@ -31,6 +31,9 @@
             background-color: #ccc;
             padding: 1em;
             text-align: center;
+			position: sticky;
+			top: 0;
+			z-index: 999;
         }
         
         .nav-container {
@@ -108,7 +111,20 @@
         #dark-mode-toggle input {
             display: none;
         }
-        
+		
+		.videoWrapper{
+			position: relative;
+			padding-bottom: 56.25%;
+			height: 0;
+		}
+		
+		.videoWrapper iframe{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 50%;
+			height: 50%;
+		}
     </style>
 </head>
 <body>
@@ -116,10 +132,8 @@
         <h1>Maastyx</h1>
     </header>
 
-    <!-- Home Page -->
-    <section id="home" class="page">
-        <nav>
-            <div class="nav-container">
+    <nav>
+        <div class="nav-container">
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#pc">PC</a></li>
@@ -127,61 +141,91 @@
                     <li><a href="#impressum">Impressum</a></li>
                 </ul>
             </div>
-            <div id="dark-mode-toggle" class="icon-container">
+		<div id="dark-mode-toggle" class="icon-container">
                 <input type="checkbox" id="dark-mode-switch">
                 <label for="dark-mode-switch">
                     <span class="icon" id="moon-icon">&#127770;</span>
                     <span class="icon" id="sun-icon">&#127769;</span>
                 </label>
             </div>
-        </nav>
-        <main>
-            <section>
-                <h2>Hallo auf meiner Webseite</h2>
-                <p>Hier könnte Ihr Text stehen</p>
-            </section>
-        </main>
-    </section>
+    </nav>
 
-    <!-- PC Page -->
-    <section id="pc" class="page">
-        <nav>
-            <!-- Navigation für die PC-Seite, falls benötigt -->
-        </nav>
-        <main>
-            <section>
-                <h2>PC Seite</h2>
-                <p>Inhalt der PC Seite</p>
-            </section>
-        </main>
-    </section>
+    <main>
+        <!-- Home Section -->
+        <section id="home">
+			<main>
+				<section>
+					<h2>Über mich</h2>
+					<p>
+						Willkommen auf meiner Webseite! Ich bin Fabian, auch bekannt als Maastyx. </br>
+						Auf meinem YouTube-Kanal und Twitch-Streams findet ihr hauptsächlich Gaming-Content: Let's Plays, </br>
+						Casual Gaming, spannende Reviews und mehr. Kommt vorbei und taucht mit mir in die Welt der Spiele ein!
+					</p>
+					<h3>Meine neuesten YouTube-Videos</h3>
+					<div class="videoWrapper">
+						<iframe 
+							src="https://www.youtube.com/embed?listType=playlist&list=UULFSgA2L-9apYHQ7aTvpT9DHw&autoplay=1&controls=1&modestbranding=1&rel=0&showinfo=0" 
+							allowfullscreen>
+						</iframe>
+						</div>
+				</section>
+				
+			</main>
+        </section>
+		
 
-    <!-- Social Page -->
-    <section id="social" class="page">
-        <nav>
-            <!-- Navigation für die Social-Seite, falls benötigt -->
-        </nav>
-        <main>
-            <section>
-                <h2>Social Seite</h2>
-                <p>Inhalt der Social Seite</p>
-            </section>
-        </main>
-    </section>
+        <!-- PC Section -->
+        <section id="pc" class="page">
+			<main>
+				<section>
+					<h2>Mein Setup</h2>
+					<ul>
+						<li>GPU: NVIDIA GeForce RTX 4080 SUPER</li>
+						<li>CPU: AMD Ryzen 9 7950X3D 16-Core</li>
+						<li>RAM: 64 GB G.Skill</li>
+						<li>Monitor (Haupt): LG ULTRAGEAR 24GS60F</li>
+						<li>Monitor 2: Samsung S22D300</li>
+						<li>Monitor 3: ASUS VS228</li>
+						<li>Mikrofon: RØDE NT-USB</li>
+						<li>Kamera: Razer Kiyo Pro</li>
+						<li>Maus: RAZER DeathAdder</li>
+						<li>Tastatur: KBDFANS 75% (Selber zusammengebaut)</li>
+					</ul>
+				 </section>
+			</main>
+        </section>
 
-    <!-- Impressum Page -->
-    <section id="impressum" class="page">
-        <nav>
-            <!-- Navigation für die Impressum-Seite, falls benötigt -->
-        </nav>
-        <main>
-            <section>
-                <h2>Impressum</h2>
-                <p>Inhalt des Impressum</p>
-            </section>
-        </main>
-    </section>
-    <script>
+        <!-- Social Section -->
+        <section id="social">
+		<main>
+				<section>
+            <h2>Social Media</h2>
+            <p>Folgt mir auf meinen Kanälen:</p>
+            <div id="social-icons">
+                <li><a href="https://twitch.tv/maastyx" target="_blank"><img src="twitch-icon.png" alt="Twitch"></a></li>
+                <li><a href="https://discord.gg/sVZGuFXSGU" target="_blank"><img src="discord-icon.png" alt="Discord"></a></li>
+                <li><a href="https://steamcommunity.com/id/Maastyx" target="_blank"><img src="steam-icon.png" alt="Steam"></a></li>
+                <li><a href="https://x.com/maastyx" target="_blank"><img src="twitter-icon.png" alt="Twitter"></a></li>
+                <li><a href="https://instagram.com/maastyx" target="_blank"><img src="instagram-icon.png" alt="Instagram"></a></li>
+                <li><a href="https://youtube.com/@maastyx" target="_blank"><img src="youtube-icon.png" alt="YouTube"></a></li>
+                <li><a href="https://tiktok.com/@maastyx00" target="_blank"><img src="tiktok-icon.png" alt="TikTok"></a></li>
+            </div>
+			</section>
+			</main>
+        </section>
+
+        <!-- Impressum Section -->
+        <section id="impressum">
+		<main>
+				<section>
+            <h2>Impressum</h2>
+            <p>Angaben gemäß § 5 TMG:</p>
+            <p>Fabian Maas<br>Maastyx<br>Email: maastyx@gmx.net</p>
+			</section>
+			</main>
+        </section>
+    </main>
+	<script>
         // JavaScript-Code hier, falls erforderlich
         const darkModeToggle = document.getElementById('dark-mode-switch');
         const moonIcon = document.getElementById('moon-icon');
