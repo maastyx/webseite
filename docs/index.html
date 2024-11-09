@@ -141,16 +141,12 @@
 			transform: scale(1.1); /* Hover-Effekt */
 		}
 		
-		nav ul, #social ul {
-			list-style-type: none;
-			padding: 0; 
-			margin: 0; 
+		ul, ol {
+			list-style: none; /* Entfernt Aufzählungspunkte */
+			padding: 0; /* Entfernt inneren Abstand */
+			margin: 0; /* Entfernt äußeren Abstand */
 		}
-
-		nav ul li, #social ul li {
-			display: inline; 
-			margin-right: 10px;
-		}
+		
     </style>
 </head>
 <body>
@@ -196,7 +192,6 @@
 						</div>
 				</section>
 				
-			</main>
         </section>
 		
 
@@ -222,21 +217,21 @@
         </section>
 
         <!-- Social Section -->
-        <section id="social">
-		<main>
+        <section id="social" class="page">
+			<main>
 				<section>
-            <h2>Social Media</h2>
-            <p>Folgt mir auf meinen Kanälen:</p>
-            <div id="social-icons">
-                <li><a href="https://twitch.tv/maastyx" target="_blank"><img src="twitch-icon.png" alt="Twitch">Twitch</a></li>
-                <li><a href="https://discord.gg/sVZGuFXSGU" target="_blank"><img src="discord-icon.png" alt="Discord">Discord</a></li>
-                <li><a href="https://steamcommunity.com/id/Maastyx" target="_blank"><img src="steam-icon.png" alt="Steam">Steam</a></li>
-                <li><a href="https://x.com/maastyx" target="_blank"><img src="twitter-icon.png" alt="Twitter"></a>Twitter</li>
-                <li><a href="https://instagram.com/maastyx" target="_blank"><img src="instagram-icon.png" alt="Instagram">Instagram</a></li>
-                <li><a href="https://youtube.com/@maastyx" target="_blank"><img src="youtube-icon.png" alt="YouTube">YouTube</a></li>
-                <li><a href="https://tiktok.com/@maastyx00" target="_blank"><img src="tiktok-icon.png" alt="TikTok">TikTok</a></li>
-            </div>
-			</section>
+					<h2>Social Media</h2>
+					<p>Folgt mir auf meinen Kanälen:</p>
+					<ul id="social-icons">
+						<li><a href="https://twitch.tv/maastyx" target="_blank"><img src="twitch-icon.png" alt="Twitch"></a>Twitch</li>
+						<li><a href="https://discord.gg/sVZGuFXSGU" target="_blank"><img src="discord-icon.png" alt="Discord"></a>Discord</li>
+						<li><a href="https://steamcommunity.com/id/Maastyx" target="_blank"><img src="steam-icon.png" alt="Steam"></a>Steam</li>
+						<li><a href="https://x.com/maastyx" target="_blank"><img src="twitter-icon.png" alt="Twitter"></a>Twitter</li>
+						<li><a href="https://instagram.com/maastyx" target="_blank"><img src="instagram-icon.png" alt="Instagram"></a>Instagram</li>
+						<li><a href="https://youtube.com/@maastyx" target="_blank"><img src="youtube-icon.png" alt="YouTube"></a>YouTube</li>
+						<li><a href="https://tiktok.com/@maastyx00" target="_blank"><img src="tiktok-icon.png" alt="TikTok"></a>TikTok</li>
+					</ul>
+				</section>
 			</main>
         </section>
 
